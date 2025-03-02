@@ -91,6 +91,9 @@ plt.show()
 '''QUESTION 3'''
 
 
+def G2(x):
+    return x - 
+
 
 
 
