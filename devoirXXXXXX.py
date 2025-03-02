@@ -92,3 +92,6 @@ plt.title("(En+1)/En en fonction de n pour r_2 (Newton)")
 plt.legend()
 plt.show()
 
+'''QUESTION 3'''
+
+'''QUESTION 4'''
