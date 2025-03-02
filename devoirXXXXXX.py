@@ -2,6 +2,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from math import e
 from pointfixe import pointfixe
+from secante import secante
 
 def f(x):
     return (x+1)*(x-1)**2
@@ -95,3 +96,6 @@ plt.show()
 '''QUESTION 3'''
 
 '''QUESTION 4'''
+
+def fsecante(x_n, x_nm1):
+    return x_n - (((x_n**3 - x_n**2 - x_n + 1)*(x_n - x_nm1))/(x_n**3 - x_n**2 - x_n + 1 - x_nm1**3 + x_nm1**2 + x_nm1 -1))
