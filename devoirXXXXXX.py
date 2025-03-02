@@ -47,3 +47,5 @@ plt.ylabel('(En+1)/En')
 plt.title("(En+1)/En en fonction de n")
 plt.legend()
 plt.show()
+
+'''QUESTION 2'''
