@@ -7,17 +7,6 @@ from secante import secante
 def f(x):
     return (x+1)*(x-1)**2
 
-
-
-'''QUESTION 1'''
-
-
-def g(x):
-    return x - f(x)/5
-
-xn_1 = pointfixe(g, -1.5, 50, 10**-7)
-xn_2 = pointfixe(g, 1.5, 50, 10**-7)
-
 def En_array(colonne_xn, r):
     En = np.array([])
     for i, x in enumerate(colonne_xn):
@@ -41,11 +30,22 @@ def Enplus1surEn2_array(colonne_En):
 
 def Enplus1surEna_array(colonne_En):
     a = (1 + 5**0.5)/2
-    Enplus1surEn2 = np.array([])
+    Enplus1surEna = np.array([])
     for i, x in enumerate(colonne_En):
         if i < (len(colonne_En) - 1):
-            Enplus1surEn2 = np.append(Enplus1surEn2, colonne_En[i+1]/x**a)
-    return Enplus1surEn2
+            Enplus1surEna = np.append(Enplus1surEna, colonne_En[i+1]/x**a)
+    return Enplus1surEna
+
+
+
+'''QUESTION 1'''
+
+
+def g(x):
+    return x - f(x)/5
+
+xn_1 = pointfixe(g, -1.5, 50, 10**-7)
+xn_2 = pointfixe(g, 1.5, 50, 10**-7)
 
 plt.semilogy(range(0, len(En_array(xn_1, -1))), En_array(xn_1, -1), label = 'racine 1')
 plt.semilogy(range(0, len(En_array(xn_2, 1))), En_array(xn_2, 1), label = 'racine 2')
@@ -120,13 +120,15 @@ plt.show()
 
 '''QUESTION 4'''
 
+
 def fsecante(x_n, x_nm1):
-    return x_n - (((x_n**3 - x_n**2 - x_n + 1)*(x_n - x_nm1))/(x_n**3 - x_n**2 - x_n + 1 - x_nm1**3 + x_nm1**2 + x_nm1 -1))
+    return x_n - ((x_n**3 - x_n**2 - x_n + 1)*(x_n - x_nm1)) / (x_n**3 - x_n**2 - x_n + 1 - x_nm1**3 + x_nm1**2 + x_nm1 - 1)
 
 xn_1 = secante(fsecante, -1.5, -1.25, 50, 10**-7)
+
 plt.semilogy(range(0, len(En_array(xn_1, -1))), En_array(xn_1, -1))
 plt.xlabel('n')
-plt.ylabel('(E_n')
+plt.ylabel('E_n')
 plt.title("E_n en fonction de n pour r_1 (Sécante)")
 plt.show()
 
