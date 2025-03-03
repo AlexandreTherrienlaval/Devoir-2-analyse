@@ -61,7 +61,7 @@ plt.show()
 
 
 def G1(x):
-    return x - (x**3 - x**2 - x + 1)/(3*x**2 - 2*x - 1)
+    return x - (x**3 - x**2 - x + 1) / (3*x**2 - 2*x - 1)
 
 xn_1 = pointfixe(G1, -1.5, 50, 10**-7)
 xn_2 = pointfixe(G1, 1.5, 50, 10**-7)
@@ -92,8 +92,21 @@ plt.show()
 
 
 def G2(x):
-    return x - 
+    return x - (g(x) - x)**2 / (g(g(x)) - 2*g(x) + x)
 
+xn_1 = pointfixe(G2, -1.5, 50, 10**-7)
+
+plt.plot(range(0, len(En_array(xn_1, -1))), En_array(xn_1, -1), label = 'racine 1')
+plt.xlabel('n')
+plt.ylabel('E_n')
+plt.title("E_n en fonction de n pour r_1 (Steffensen)")
+plt.show()
+
+plt.plot(range(0, len(Enplus1surEn2_array(En_array(xn_1, -1)))), Enplus1surEn2_array(En_array(xn_1, -1)))
+plt.xlabel('n')
+plt.ylabel('(E_n+1)/E_n^2')
+plt.title("(E_n+1)/E_n^2 en fonction de n pour r_1 (Steffensen)")
+plt.show()
 
 
 
