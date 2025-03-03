@@ -96,7 +96,7 @@ def G2(x):
 
 xn_1 = pointfixe(G2, -1.5, 50, 10**-7)
 
-plt.plot(range(0, len(En_array(xn_1, -1))), En_array(xn_1, -1), label = 'racine 1')
+plt.semilogy(range(0, len(En_array(xn_1, -1))), En_array(xn_1, -1), label = 'racine 1')
 plt.xlabel('n')
 plt.ylabel('E_n')
 plt.title("E_n en fonction de n pour r_1 (Steffensen)")
