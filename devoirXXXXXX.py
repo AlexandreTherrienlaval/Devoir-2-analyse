@@ -114,3 +114,5 @@ plt.show()
 
 def fsecante(x_n, x_nm1):
     return x_n - (((x_n**3 - x_n**2 - x_n + 1)*(x_n - x_nm1))/(x_n**3 - x_n**2 - x_n + 1 - x_nm1**3 + x_nm1**2 + x_nm1 -1))
+
+xn_1 = secante(fsecante, -1.5, -1.25, 50, 10**-7)
