@@ -132,6 +132,6 @@ plt.show()
 
 plt.plot(range(0, len(Enplus1surEna_array(En_array(xn_1, -1)))), Enplus1surEna_array(En_array(xn_1, -1)))
 plt.xlabel('n')
-plt.ylabel('(E_n+1)/E_n^a')
-plt.title("(E_n+1)/E_n^a en fonction de n pour r_1 (Sécante)")
+plt.ylabel('(E_n+1)/E_n^alpha')
+plt.title("(E_n+1)/E_n^alpha en fonction de n pour r_1 (Sécante)")
 plt.show()
